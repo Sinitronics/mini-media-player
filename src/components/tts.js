@@ -30,14 +30,14 @@ class MiniMediaPlayerTts extends LitElement {
 
   render() {
     return html`
-      <paper-input
+      <ha-textfield
         id="tts-input"
         class="mmp-tts__input"
         no-label-float
         placeholder="${this.label}..."
         @click=${e => e.stopPropagation()}
       >
-      </paper-input>
+      </ha-textfield>
       <mmp-button class="mmp-tts__button" @click=${this.handleTts}>
         <span>${t(this.hass, 'label.send')}</span>
       </mmp-button>
@@ -128,7 +128,7 @@ class MiniMediaPlayerTts extends LitElement {
         height: 30px;
         padding: 0 .4em;
       }
-      paper-input {
+      ha-textfield {
         opacity: .75;
         --paper-input-container-color: var(--mmp-text-color);
         --paper-input-container-input-color: var(--mmp-text-color);
@@ -137,11 +137,11 @@ class MiniMediaPlayerTts extends LitElement {
           padding: 0;
         };
       }
-      paper-input[focused] {
+      ha-textfield[focused] {
         opacity: 1;
       }
 
-      ha-card[artwork*='cover'][has-artwork] paper-input {
+      ha-card[artwork*='cover'][has-artwork] ha-textfield {
         --paper-input-container-color: #FFFFFF;
         --paper-input-container-input-color: #FFFFFF;
         --paper-input-container-focus-color: #FFFFFF;
